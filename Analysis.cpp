@@ -37,8 +37,6 @@ int analyze(const Compilation* compilation)
 {
     std::cout << "Analyzing..." << std::endl;
     for (auto tree : compilation->syntaxTrees()) {
-        if (!tree)
-            continue;
         std::cout << " File: " << tree->filePath() << std::endl;
         AnalysisVisitor visitor(compilation->semanticModel(tree), tree);
         visitor.analyze();
